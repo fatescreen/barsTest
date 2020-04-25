@@ -1,0 +1,15 @@
+C:\barsTest\barsTest\bin\Debug\netcoreapp3.1\barsTest.exe
+C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.csprojAssemblyReference.cache
+C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.AssemblyInfoInputs.cache
+C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.AssemblyInfo.cs
+C:\barsTest\barsTest\bin\Debug\netcoreapp3.1\barsTest.deps.json
+C:\barsTest\barsTest\bin\Debug\netcoreapp3.1\barsTest.runtimeconfig.json
+C:\barsTest\barsTest\bin\Debug\netcoreapp3.1\barsTest.runtimeconfig.dev.json
+C:\barsTest\barsTest\bin\Debug\netcoreapp3.1\barsTest.dll
+C:\barsTest\barsTest\bin\Debug\netcoreapp3.1\barsTest.pdb
+C:\barsTest\barsTest\bin\Debug\netcoreapp3.1\Npgsql.dll
+C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.csproj.CoreCompileInputs.cache
+C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.csproj.CopyComplete
+C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.dll
+C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.pdb
+C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.genruntimeconfig.cache
