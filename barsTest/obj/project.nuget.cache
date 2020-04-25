@@ -1,9 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "h9BTZ3NCbpx1eqKFjTky5QWc6lh3I5MzAZ3ZFXdoBBWioVAzIlkAkDODogWqO5pS2FRI8fxrh8A3kZ3J4OTEpg==",
+  "dgSpecHash": "gBSL7oo7S3COfVu43C7ie9v6A8/zkwQFC6K+PwN8upOhsUyrQGmlpZ9p+cqbymmmnFZTAWqL8tIIXbzi82kiyQ==",
   "success": true,
   "projectFilePath": "C:\\barsTest\\barsTest\\barsTest.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\google.apis\\1.45.0\\google.apis.1.45.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\google.apis.auth\\1.45.0\\google.apis.auth.1.45.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\google.apis.core\\1.45.0\\google.apis.core.1.45.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\google.apis.sheets.v4\\1.45.0.1930\\google.apis.sheets.v4.1.45.0.1930.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\npgsql\\4.1.3.1\\npgsql.4.1.3.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
   ],
