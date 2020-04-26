@@ -2,8 +2,9 @@
 using System;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Sheets.v4;
+using CustomPostgreSQL;
 using Npgsql;
-using System;
+
 
 
 namespace barsTest
@@ -23,40 +24,34 @@ namespace barsTest
         static void Main(string[] args)
         {
 
-            GoogleCredential credential;
-            using (var stream = new FileStream("gclient_keys.json", FileMode.Open, FileAccess.Read))
-            {
-                credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes);
-            }
+            //    GoogleCredential credential;
+            //    using (var stream = new FileStream("gclient_keys.json", FileMode.Open, FileAccess.Read))
+            //    {
+            //        credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes);
+            //    }
 
-            service = new SheetsService(new Google.Apis.Services.BaseClientService.Initializer()
-            {
-                HttpClientInitializer = credential,
-                ApplicationName = ApplicationName,
-            });
+            //    service = new SheetsService(new Google.Apis.Services.BaseClientService.Initializer()
+            //    {
+            //        HttpClientInitializer = credential,
+            //        ApplicationName = ApplicationName,
+            //    });
 
-            var range = $"{sheet}!A1:F10";
-            var request = service.Spreadsheets.Values.Get(SpreadsheetId, range);
+            //    var range = $"{sheet}!A1:F10";
+            //    var request = service.Spreadsheets.Values.Get(SpreadsheetId, range);
 
-            var response = request.Execute();
-            var values = response.Values;
+            //    var response = request.Execute();
+            //    var values = response.Values;
 
-            foreach (var row in values)
-            {
-                Console.WriteLine("{0} {1} {2}", row[0], row[1], row[2]);
-            }
+            //    foreach (var row in values)
+            //    {
+            //        Console.WriteLine("{0} {1} {2}", row[0], row[1], row[2]);
+            //    }
 
-                var cs = "Host=localhost;Username=postgres;Password=lol123;Database=postgres";
+            string connectionString = "Host=localhost;Username=postgres;Password=lol123;Database=postgres";
+            PostgreSQL postgre = new PostgreSQL(connectionString);
 
-            using var con = new NpgsqlConnection(cs);
-            con.Open();
+            Console.WriteLine(postgre.getDataBaseSizeInGb());
 
-            var sql = "SELECT * from test";
-
-            using var cmd = new NpgsqlCommand(sql, con);
-
-            var version = cmd.ExecuteScalar().ToString();
-            Console.WriteLine($"PostgreSQL version: {version}");
             Console.ReadLine();
         }
     }
