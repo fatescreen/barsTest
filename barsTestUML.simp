@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sim-project version="11.91" multi-file="no" uid="simpa2f2f7e8d15a47e8bda4ba86252ccf4c">
+  <meta>
+    <name>Project</name>
+    <authors> </authors>
+    <description />
+  </meta>
+  <counters models="1">
+    <entity-names>
+      <counter>
+        <item-type type-id="class" type="UmlClass" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type stereotype="interface" type-id="class" type="UmlClass" />
+        <value>1</value>
+      </counter>
+    </entity-names>
+    <entity-ids>
+      <counter>
+        <item-type type-id="group" type="AbstractElementGroup" />
+        <value>50</value>
+      </counter>
+      <counter>
+        <item-type type-id="class" type="UmlClass" />
+        <value>4</value>
+      </counter>
+      <counter>
+        <item-type type-id="universal-connector" type="UniversalConnector" />
+        <value>4</value>
+      </counter>
+      <counter>
+        <item-type type-id="dependency" type="UmlDependency" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="realization" type="UmlRealization" />
+        <value>2</value>
+      </counter>
+    </entity-ids>
+    <diagrams>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlClassDiagram</type>
+        <value>1</value>
+      </counter>
+    </diagrams>
+    <fields>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.OperationField</type>
+        <value>3</value>
+      </counter>
+    </fields>
+  </counters>
+  <alias-groups />
+  <management uid="md-aac0354f431b41c99a0a556906d2e2cb" name="" task-id-sequence="0">
+    <persons>
+      <person id="Pde55a8eb68b54b8f91b8a56577d72312">
+        <first-name />
+        <last-name>Admin</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+      </person>
+    </persons>
+    <teams />
+    <sprints />
+    <projects />
+    <modules />
+    <tasks />
+    <to-dos />
+  </management>
+  <glossary id="glsr-2c871bc0af4d476b9e64807dde7c23c4" />
+  <types default="UML">
+    <type-sets>
+      <type-set file="UmlTypes.xml" />
+    </type-sets>
+    <custom-types />
+  </types>
+  <items />
+  <models>
+    <model id="pe540c392a5894d9bbcb8f6fc937f9a44_161901996" name="Model1" namespace="" order-index="1">
+      <meta>
+        <authors>
+          <author> </author>
+        </authors>
+        <description />
+        <creation-date>04/26/2020 19:55:07</creation-date>
+        <change-date>01/01/0001 00:00:00</change-date>
+        <revision-count>0</revision-count>
+        <version />
+      </meta>
+      <abstract-items />
+      <sub-models />
+      <diagram type="uml-class" id="p92d404dace074fa384004c89c73d9718_589558030" name="ClassDiagram1" order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="164,-22">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>04/26/2020 19:55:07</creation-date>
+          <change-date>04/26/2020 20:06:14</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items>
+          <item id="2dbb652d1d00450db1eadc51e7781cc8" cid="C001" type="class" name="Programm" style-class="" visibility="package" change-tracking-state="added" creator="Pde55a8eb68b54b8f91b8a56577d72312" creation-date="04/26/2020 19:56:03" />
+          <item id="5340fe66389b470eb40083de27b71b9e" cid="C002" type="class" name="IPostgreSQL" style-class="" visibility="package" change-tracking-state="added" creator="Pde55a8eb68b54b8f91b8a56577d72312" creation-date="04/26/2020 19:56:12">
+            <stereotypes>
+              <stereotype name="interface" />
+            </stereotypes>
+            <operations>
+              <operation id="ob68191e532c349a5a63f7d7976390eed515" cid="ELEM002" name="getDataBaseSizeInGb" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public" />
+            </operations>
+          </item>
+          <item id="74f14903e89740d9be58d2b0faf242f8" cid="C003" type="class" name="PostgreSQL" style-class="" visibility="package" change-tracking-state="added" creator="Pde55a8eb68b54b8f91b8a56577d72312" creation-date="04/26/2020 19:57:27">
+            <operations>
+              <operation id="oc459911e42354eb7b2e6024b50f8a95d395" cid="ELEM001" name="getDataBaseSizeInGb" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public" />
+            </operations>
+          </item>
+          <item id="43997146987241b89256ef08e4f734b4" cid="DEP001" type="dependency" name="" style-class="" visibility="package" change-tracking-state="added" creator="Pde55a8eb68b54b8f91b8a56577d72312" creation-date="04/26/2020 20:06:01" from="2dbb652d1d00450db1eadc51e7781cc8" to="5340fe66389b470eb40083de27b71b9e">
+            <stereotypes>
+              <stereotype name="use" />
+            </stereotypes>
+          </item>
+          <item id="9eca538442334299aec12fb09b9d193d" cid="REA001" type="realization" name="" style-class="" visibility="package" change-tracking-state="added" creator="Pde55a8eb68b54b8f91b8a56577d72312" creation-date="04/26/2020 20:06:14" from="74f14903e89740d9be58d2b0faf242f8" to="5340fe66389b470eb40083de27b71b9e" />
+        </abstract-items>
+        <layer id="c4d98ebf85f741e4af5be197aaf5431b" name="Default" visible="true" enabled="true" locked="false">
+          <item id="2dbb652d1d00450db1eadc51e7781cc8" iid="90d92601be264e9191e4c9a87b6542ea" anchor="None" creation-date="04/26/2020 19:56:03" order-index="0" type="entity">
+            <layout ax="481" ay="229" awidth="140" aheight="160" x="481" y="229" width="140" height="160" />
+            <class />
+          </item>
+          <item id="5340fe66389b470eb40083de27b71b9e" iid="4617fc0b0c4b40f0998c552cce602be7" anchor="None" creation-date="04/26/2020 19:56:12" order-index="1" type="entity">
+            <layout ax="850" ay="229" awidth="189" aheight="160" x="850" y="229" width="189" height="160" />
+            <class />
+          </item>
+          <item id="74f14903e89740d9be58d2b0faf242f8" iid="030251b6d17c40569d9cd4be76422f69" anchor="None" creation-date="04/26/2020 19:57:27" order-index="2" type="entity">
+            <layout ax="850" ay="440" awidth="189" aheight="160" x="850" y="440" width="189" height="160" />
+            <class />
+          </item>
+          <item id="43997146987241b89256ef08e4f734b4" iid="6bfa872978b74bc588c3f13b64322999" creation-date="04/26/2020 20:06:01" order-index="3" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="621" y1="309" x2="850" y2="309" start-border-pos="0.375" end-border-pos="0.875" name-position="0,0">
+              <points>
+                <point x="621" y="309" />
+                <point x="850" y="309" />
+              </points>
+            </layout>
+            <relation from="2dbb652d1d00450db1eadc51e7781cc8" from-iid="90d92601be264e9191e4c9a87b6542ea" to="5340fe66389b470eb40083de27b71b9e" to-iid="4617fc0b0c4b40f0998c552cce602be7" />
+          </item>
+          <item id="9eca538442334299aec12fb09b9d193d" iid="7e84fda13112443ca2831e3f2971dc6a" creation-date="04/26/2020 20:06:14" order-index="4" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="944" y1="440" x2="944" y2="389" start-border-pos="0.124338624338624" end-border-pos="0.625661375661376" name-position="0,0">
+              <points>
+                <point x="944" y="440" />
+                <point x="944" y="389" />
+              </points>
+            </layout>
+            <relation from="74f14903e89740d9be58d2b0faf242f8" from-iid="030251b6d17c40569d9cd4be76422f69" to="5340fe66389b470eb40083de27b71b9e" to-iid="4617fc0b0c4b40f0998c552cce602be7" />
+          </item>
+        </layer>
+      </diagram>
+    </model>
+  </models>
+</sim-project>
