@@ -2,7 +2,7 @@
 using System;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Sheets.v4;
-using CustomPostgreSQL;
+using barsTest.CustomPostgreSQL;
 using Npgsql;
 
 
@@ -49,7 +49,6 @@ namespace barsTest
 
             string connectionString = "Host=localhost;Username=postgres;Password=lol123;Database=postgres";
             PostgreSQL postgre = new PostgreSQL(connectionString);
-
             Console.WriteLine(postgre.getDataBaseSizeInGb());
 
             Console.ReadLine();

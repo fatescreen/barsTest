@@ -1,7 +1,7 @@
 ﻿using System;
 using Npgsql;
 
-namespace CustomPostgreSQL
+namespace barsTest.CustomPostgreSQL
 {
 
 	public class PostgreSQL : IPostgreSQL
@@ -15,23 +15,6 @@ namespace CustomPostgreSQL
 			this.connectionString = connectionString;
 			this.connection = new NpgsqlConnection(this.connectionString);
 			this.dataBaseName = connectionString.Substring(connectionString.IndexOf("Database=")).Replace("Database=", "");
-		}
-
-		private string getDataBaseSize()
-		{		
-			string getDataBaseSizeCommand = $"SELECT pg_size_pretty( pg_database_size('{this.dataBaseName}') );";
-
-			string size = "";
-			this.connection.Open();
-			using (var command = new NpgsqlCommand(getDataBaseSizeCommand, this.connection))
-			using (var reader = command.ExecuteReader())
-			while (reader.Read())
-			{
-				size = reader.GetString(0);
-			}
-			this.connection.Close();
-
-			return size;
 		}
 
 		public float getDataBaseSizeInGb()
@@ -69,6 +52,23 @@ namespace CustomPostgreSQL
 			}
 
 			return result;
+		}
+
+		private string getDataBaseSize()
+		{
+			string getDataBaseSizeCommand = $"SELECT pg_size_pretty( pg_database_size('{this.dataBaseName}') );";
+			string size = "";
+
+			this.connection.Open();
+			using (var command = new NpgsqlCommand(getDataBaseSizeCommand, this.connection))
+			using (var reader = command.ExecuteReader())
+			while (reader.Read())
+			{
+				size = reader.GetString(0);
+			}
+			this.connection.Close();
+
+			return size;
 		}
 	}
 

@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace CustomPostgreSQL
+namespace barsTest.CustomPostgreSQL
 {
     interface IPostgreSQL
     {

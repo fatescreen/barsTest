@@ -8,3 +8,8 @@ barsTest/bin/Debug/netcoreapp3.1/barsTest.pdb
 barsTest/CustomPostgreSQL/PostgreSQL.cs
 barsTest/obj/Debug/netcoreapp3.1/barsTest.dll
 barsTest/obj/Debug/netcoreapp3.1/barsTest.pdb
+*.pdb
+*.pdb
+*.dll
+*.cache
+.vs/barsTest/v16/.suo
