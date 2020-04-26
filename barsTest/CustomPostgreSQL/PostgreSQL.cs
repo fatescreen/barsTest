@@ -17,7 +17,7 @@ namespace CustomPostgreSQL
 			this.dataBaseName = connectionString.Substring(connectionString.IndexOf("Database=")).Replace("Database=", "");
 		}
 
-		string getDataBaseSize()
+		private string getDataBaseSize()
 		{		
 			string getDataBaseSizeCommand = $"SELECT pg_size_pretty( pg_database_size('{this.dataBaseName}') );";
 
