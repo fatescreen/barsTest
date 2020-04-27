@@ -19,7 +19,7 @@
     <entity-ids>
       <counter>
         <item-type type-id="group" type="AbstractElementGroup" />
-        <value>717</value>
+        <value>718</value>
       </counter>
       <counter>
         <item-type type-id="class" type="UmlClass" />

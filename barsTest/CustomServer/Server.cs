@@ -5,14 +5,14 @@ using System.Text;
 
 namespace barsTest.CustomServer
 {
-    class Server
+    class Server : IServer
     {
         public string Name { get; set; }
         public string Host { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string Database { get; set; }
-        public string serverSizeInGb { get; set; }
+        public float serverSizeInGb { get; set; }
 
         private string connectionString;      
 
@@ -21,7 +21,7 @@ namespace barsTest.CustomServer
             
         }
 
-        public string getDataBaseSizeInGb()
+        public float getDataBaseSizeInGb()
         {
             this.connectionString = "Host=" + this.Host +
                                         ";Username=" + this.Username +
@@ -29,10 +29,10 @@ namespace barsTest.CustomServer
                                         ";Database=" + this.Database;
 
             PostgreSQL database = new PostgreSQL(this.connectionString);
-            return database.getDataBaseSizeInGb().ToString();
+            return database.getDataBaseSizeInGb();
         }
 
-        public string getServerSizeInGb()
+        public float getServerSizeInGb()
         {
             return this.serverSizeInGb;
         }

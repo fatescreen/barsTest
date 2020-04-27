@@ -9,5 +9,13 @@ namespace barsTest.CustomServer
     class ServerList
     {
         public List<Server> servers { get; set; }        
+
+        public ServerList()
+        {
+
+        }
+
+
+
     }
 }

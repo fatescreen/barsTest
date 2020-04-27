@@ -6,7 +6,7 @@ namespace barsTest.CustomServer
 {
     interface IServer
     {
-        public string getDataBaseSizeInGb();
-        public string getServerSizeInGb();
+        public float getDataBaseSizeInGb();
+        public float getServerSizeInGb();
     }
 }
