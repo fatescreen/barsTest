@@ -1,13 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\barsTest",
-    "\\barsTest\\bin\\Debug",
-    "\\barsTest\\bin\\Debug\\netcoreapp3.1",
-    "\\barsTest\\bin\\Release\\netcoreapp3.1",
-    "\\barsTest\\obj\\Release",
-    "\\barsTest\\obj\\Release\\netcoreapp3.1"
+    "\\barsTest"
   ],
-  "SelectedNode": "\\barsTest",
+  "SelectedNode": "\\barsTest\\barsTest.csproj",
   "PreviewInSolutionExplorer": false
 }

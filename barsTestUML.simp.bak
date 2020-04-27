@@ -9,33 +9,33 @@
     <entity-names>
       <counter>
         <item-type type-id="class" type="UmlClass" />
-        <value>3</value>
+        <value>5</value>
       </counter>
       <counter>
         <item-type stereotype="interface" type-id="class" type="UmlClass" />
-        <value>2</value>
+        <value>4</value>
       </counter>
     </entity-names>
     <entity-ids>
       <counter>
         <item-type type-id="group" type="AbstractElementGroup" />
-        <value>125</value>
+        <value>314</value>
       </counter>
       <counter>
         <item-type type-id="class" type="UmlClass" />
-        <value>6</value>
+        <value>10</value>
       </counter>
       <counter>
         <item-type type-id="universal-connector" type="UniversalConnector" />
-        <value>8</value>
+        <value>11</value>
       </counter>
       <counter>
         <item-type type-id="dependency" type="UmlDependency" />
-        <value>5</value>
+        <value>7</value>
       </counter>
       <counter>
         <item-type type-id="realization" type="UmlRealization" />
-        <value>3</value>
+        <value>4</value>
       </counter>
     </entity-ids>
     <diagrams>
@@ -47,7 +47,11 @@
     <fields>
       <counter>
         <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.OperationField</type>
-        <value>6</value>
+        <value>12</value>
+      </counter>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.AttributeField</type>
+        <value>10</value>
       </counter>
     </fields>
   </counters>
@@ -78,7 +82,9 @@
     <type-sets>
       <type-set file="UmlTypes.xml" />
     </type-sets>
-    <custom-types />
+    <custom-types>
+      <type id="()" tid="" name="()" description="" />
+    </custom-types>
   </types>
   <items />
   <models>
@@ -95,7 +101,7 @@
       </meta>
       <abstract-items />
       <sub-models />
-      <diagram type="uml-class" id="p92d404dace074fa384004c89c73d9718_589558030" name="ClassDiagram1" order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="164,-22">
+      <diagram type="uml-class" id="p92d404dace074fa384004c89c73d9718_589558030" name="ClassDiagram1" order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="72,0">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -107,7 +113,7 @@
           </authors>
           <description />
           <creation-date>04/26/2020 19:55:07</creation-date>
-          <change-date>04/27/2020 01:17:03</change-date>
+          <change-date>04/27/2020 18:43:46</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -123,13 +129,21 @@
           </item>
           <item id="74f14903e89740d9be58d2b0faf242f8" cid="C003" type="class" name="PostgreSQL" style-class="" visibility="package" change-tracking-state="added" creator="Pde55a8eb68b54b8f91b8a56577d72312" creation-date="04/26/2020 19:57:27">
             <operations>
-              <operation id="oc459911e42354eb7b2e6024b50f8a95d395" cid="ELEM001" name="getDataBaseSizeInGb" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public" />
+              <operation id="o4d9cab3f082d405cbfda06740266567e12" cid="ELEM010" name="PostgreSQL" creation-date="01/01/0001 00:00:00" type="()" type-id="()" visibility="public">
+                <parameters>
+                  <parameter id="pb3b33a3b9543483b9f9cf366787b9fa4" name="string connectionString" type="" type-id="" />
+                </parameters>
+              </operation>
+              <operation id="o27003ed22bbe4428aed67a1a28791504104" cid="ELEM008" name="getDataBaseSize" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public" />
             </operations>
           </item>
-          <item id="14aab203a99e4336a8d232d07115d417" cid="DEP003" type="dependency" name="" style-class="" visibility="package" change-tracking-state="added" creator="Pde55a8eb68b54b8f91b8a56577d72312" creation-date="04/27/2020 01:16:45" from="280a81f6546e4a4cb3e5914909deb1b2" to="5340fe66389b470eb40083de27b71b9e">
+          <item id="b30d894a53984cf6a42026da1b3b5a16" cid="C006" type="class" name="IServer" style-class="" visibility="package" change-tracking-state="added" creator="Pde55a8eb68b54b8f91b8a56577d72312" creation-date="04/27/2020 17:54:19">
             <stereotypes>
-              <stereotype name="use" />
+              <stereotype name="interface" />
             </stereotypes>
+            <operations>
+              <operation id="o0cf70719391646c2aee100f9ed6b5ba2323" cid="ELEM006" name="getServerSizeInGb" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public" />
+            </operations>
           </item>
           <item id="9eca538442334299aec12fb09b9d193d" cid="REA001" type="realization" name="" style-class="" visibility="package" change-tracking-state="added" creator="Pde55a8eb68b54b8f91b8a56577d72312" creation-date="04/26/2020 20:06:14" from="74f14903e89740d9be58d2b0faf242f8" to="5340fe66389b470eb40083de27b71b9e" />
           <item id="280a81f6546e4a4cb3e5914909deb1b2" cid="C004" type="class" name="IGoogleTable" style-class="" visibility="package" change-tracking-state="added" creator="Pde55a8eb68b54b8f91b8a56577d72312" creation-date="04/27/2020 01:14:48">
@@ -142,73 +156,109 @@
           </item>
           <item id="866d60473bda4ee383b7922437b8dd27" cid="C005" type="class" name="GoogleTable" style-class="" visibility="package" change-tracking-state="added" creator="Pde55a8eb68b54b8f91b8a56577d72312" creation-date="04/27/2020 01:15:03">
             <operations>
-              <operation id="o21bd5071dbd945e4ad64742247aa04ae600" cid="ELEM004" name="update" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public" />
               <operation id="o33e8fdb4e4f94849b894dcacf56bf376723" cid="ELEM005" name="create" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public" />
             </operations>
           </item>
           <item id="eef8e76427e54227a8eeada446caca04" cid="REA002" type="realization" name="" style-class="" visibility="package" change-tracking-state="added" creator="Pde55a8eb68b54b8f91b8a56577d72312" creation-date="04/27/2020 01:16:57" from="866d60473bda4ee383b7922437b8dd27" to="280a81f6546e4a4cb3e5914909deb1b2" />
-          <item id="e9ab93bfc2714ec38ced7042a081a1a3" cid="DEP004" type="dependency" name="" style-class="" visibility="package" change-tracking-state="added" creator="Pde55a8eb68b54b8f91b8a56577d72312" creation-date="04/27/2020 01:17:03" from="2dbb652d1d00450db1eadc51e7781cc8" to="280a81f6546e4a4cb3e5914909deb1b2">
+          <item id="a2b1d7e14fff42a4a9f97e1fa9dcf4d7" cid="C009" type="class" name="GoogleSheet" style-class="" visibility="package" change-tracking-state="added" creator="Pde55a8eb68b54b8f91b8a56577d72312" creation-date="04/27/2020 18:43:46" />
+          <item id="7f775b2990a34cce8951ea842e7be1e6" cid="C007" type="class" name="Server" style-class="" visibility="package" change-tracking-state="added" creator="Pde55a8eb68b54b8f91b8a56577d72312" creation-date="04/27/2020 17:56:24">
+            <attributes>
+              <attribute id="a4995739904b94ec8af93ecf98c9dc36b857" cid="ELEM007" name="PostgreSQL database" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="private" />
+              <attribute id="a509fa644db0041aba4ba09a1afd9dcf1163" cid="ELEM009" name="float sizeInGb" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="private" />
+            </attributes>
+            <operations>
+              <operation id="o984c0800cf35487ca73afde4597dd064502" cid="ELEM011" name="Server" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p63afeaab1b78483eb4670f803737e3d6" name="float sizeInGb" type="" type-id="" />
+                  <parameter id="p06b4b354c20f449bb6802413deb4c431" name="string connectionString" type="" type-id="" />
+                </parameters>
+              </operation>
+            </operations>
+          </item>
+          <item id="41c09b18fc2941eeb6d586ee8e6c23b2" cid="REA003" type="realization" name="" style-class="" visibility="package" change-tracking-state="added" creator="Pde55a8eb68b54b8f91b8a56577d72312" creation-date="04/27/2020 18:16:02" from="7f775b2990a34cce8951ea842e7be1e6" to="b30d894a53984cf6a42026da1b3b5a16" />
+          <item id="f28449226da946478622ca20672355cb" cid="DEP005" type="dependency" name="" style-class="" visibility="package" change-tracking-state="added" creator="Pde55a8eb68b54b8f91b8a56577d72312" creation-date="04/27/2020 18:16:09" from="b30d894a53984cf6a42026da1b3b5a16" to="5340fe66389b470eb40083de27b71b9e">
             <stereotypes>
               <stereotype name="use" />
+            </stereotypes>
+          </item>
+          <item id="6d67eae42009431cb21343c47e3e5a07" cid="C008" type="class" name="IGoogleSheet" style-class="" visibility="package" change-tracking-state="added" creator="Pde55a8eb68b54b8f91b8a56577d72312" creation-date="04/27/2020 18:43:32">
+            <stereotypes>
+              <stereotype name="interface" />
             </stereotypes>
           </item>
         </abstract-items>
         <layer id="c4d98ebf85f741e4af5be197aaf5431b" name="Default" visible="true" enabled="true" locked="false">
           <item id="2dbb652d1d00450db1eadc51e7781cc8" iid="90d92601be264e9191e4c9a87b6542ea" anchor="None" creation-date="04/26/2020 19:56:03" order-index="0" type="entity">
-            <layout ax="347" ay="197" awidth="140" aheight="160" x="347" y="197" width="140" height="160" />
+            <layout ax="79" ay="20" awidth="140" aheight="160" x="79" y="20" width="140" height="160" />
             <class />
           </item>
           <item id="5340fe66389b470eb40083de27b71b9e" iid="4617fc0b0c4b40f0998c552cce602be7" anchor="None" creation-date="04/26/2020 19:56:12" order-index="1" type="entity">
-            <layout ax="832" ay="197" awidth="189" aheight="160" x="832" y="197" width="189" height="160" />
+            <layout ax="1063" ay="197" awidth="272.5" aheight="160" x="1063" y="197" width="272.5" height="160" />
             <class />
           </item>
           <item id="74f14903e89740d9be58d2b0faf242f8" iid="030251b6d17c40569d9cd4be76422f69" anchor="None" creation-date="04/26/2020 19:57:27" order-index="2" type="entity">
-            <layout ax="832" ay="440" awidth="189" aheight="160" x="832" y="440" width="189" height="160" />
+            <layout ax="1063" ay="440" awidth="272.5" aheight="160" x="1063" y="440" width="272.5" height="160" />
             <class />
           </item>
           <item id="9eca538442334299aec12fb09b9d193d" iid="7e84fda13112443ca2831e3f2971dc6a" creation-date="04/26/2020 20:06:14" order-index="4" type="relation">
-            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="926" y1="440" x2="926" y2="357" start-border-pos="0.124338624338624" end-border-pos="0.625661375661376" name-position="0,0">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="1199" y1="440" x2="1199" y2="357" start-border-pos="0.124338624338624" end-border-pos="0.625661375661376" name-position="0,0">
               <points>
-                <point x="926" y="440" />
-                <point x="926" y="357" />
+                <point x="1199" y="440" />
+                <point x="1199" y="357" />
               </points>
             </layout>
             <relation from="74f14903e89740d9be58d2b0faf242f8" from-iid="030251b6d17c40569d9cd4be76422f69" to="5340fe66389b470eb40083de27b71b9e" to-iid="4617fc0b0c4b40f0998c552cce602be7" />
           </item>
           <item id="280a81f6546e4a4cb3e5914909deb1b2" iid="c69c1cc8b12f44cb8b4c7e12673f81c1" anchor="None" creation-date="04/27/2020 01:14:48" order-index="5" type="entity">
-            <layout ax="623" ay="197" awidth="140" aheight="160" x="623" y="197" width="140" height="160" />
+            <layout ax="268" ay="197" awidth="140" aheight="160" x="268" y="197" width="140" height="160" />
             <class />
           </item>
           <item id="866d60473bda4ee383b7922437b8dd27" iid="47e052d01a6c4050b04c748b508a4d4c" anchor="None" creation-date="04/27/2020 01:15:03" order-index="6" type="entity">
-            <layout ax="623" ay="440" awidth="140" aheight="160" x="623" y="440" width="140" height="160" />
+            <layout ax="268" ay="440" awidth="140" aheight="160" x="268" y="440" width="140" height="160" />
             <class />
           </item>
-          <item id="14aab203a99e4336a8d232d07115d417" iid="a1cc87e2d442462386c1873213439537" creation-date="04/27/2020 01:16:45" order-index="7" type="relation">
-            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="763" y1="277" x2="832" y2="277" start-border-pos="0.375" end-border-pos="0.875" name-position="0,0">
-              <points>
-                <point x="763" y="277" />
-                <point x="832" y="277" />
-              </points>
-            </layout>
-            <relation from="280a81f6546e4a4cb3e5914909deb1b2" from-iid="c69c1cc8b12f44cb8b4c7e12673f81c1" to="5340fe66389b470eb40083de27b71b9e" to-iid="4617fc0b0c4b40f0998c552cce602be7" />
-          </item>
           <item id="eef8e76427e54227a8eeada446caca04" iid="e564c6f8c3e84da492e6a25bb89c5431" creation-date="04/27/2020 01:16:57" order-index="8" type="relation">
-            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="693" y1="440" x2="693" y2="357" start-border-pos="0.125" end-border-pos="0.625" name-position="0,0">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="338" y1="440" x2="338" y2="357" start-border-pos="0.125" end-border-pos="0.625" name-position="0,0">
               <points>
-                <point x="693" y="440" />
-                <point x="693" y="357" />
+                <point x="338" y="440" />
+                <point x="338" y="357" />
               </points>
             </layout>
             <relation from="866d60473bda4ee383b7922437b8dd27" from-iid="47e052d01a6c4050b04c748b508a4d4c" to="280a81f6546e4a4cb3e5914909deb1b2" to-iid="c69c1cc8b12f44cb8b4c7e12673f81c1" />
           </item>
-          <item id="e9ab93bfc2714ec38ced7042a081a1a3" iid="234033f1591c4611a105b6e596f227f3" creation-date="04/27/2020 01:17:03" order-index="9" type="relation">
-            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="487" y1="277" x2="623" y2="277" start-border-pos="0.375" end-border-pos="0.875" name-position="0,0">
+          <item id="b30d894a53984cf6a42026da1b3b5a16" iid="00a2f11363fd4f99aa87cec806003b71" anchor="None" creation-date="04/27/2020 17:54:19" order-index="10" type="entity">
+            <layout ax="674" ay="197" awidth="339" aheight="160" x="674" y="197" width="339" height="160" />
+            <class />
+          </item>
+          <item id="7f775b2990a34cce8951ea842e7be1e6" iid="35d7512a00c34fe4a7067bc8c2fe04db" anchor="None" creation-date="04/27/2020 17:56:24" order-index="11" type="entity">
+            <layout ax="674" ay="440" awidth="339" aheight="160" x="674" y="440" width="339" height="160" />
+            <class />
+          </item>
+          <item id="41c09b18fc2941eeb6d586ee8e6c23b2" iid="f39d1026e20e46a6a9638ac84fb9f572" creation-date="04/27/2020 18:16:02" order-index="12" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="843" y1="440" x2="844" y2="357" start-border-pos="0.124269005847953" end-border-pos="0.625" name-position="0,0">
               <points>
-                <point x="487" y="277" />
-                <point x="623" y="277" />
+                <point x="843" y="440" />
+                <point x="844" y="357" />
               </points>
             </layout>
-            <relation from="2dbb652d1d00450db1eadc51e7781cc8" from-iid="90d92601be264e9191e4c9a87b6542ea" to="280a81f6546e4a4cb3e5914909deb1b2" to-iid="c69c1cc8b12f44cb8b4c7e12673f81c1" />
+            <relation from="7f775b2990a34cce8951ea842e7be1e6" from-iid="35d7512a00c34fe4a7067bc8c2fe04db" to="b30d894a53984cf6a42026da1b3b5a16" to-iid="00a2f11363fd4f99aa87cec806003b71" />
+          </item>
+          <item id="f28449226da946478622ca20672355cb" iid="387f8f6a00bd446094b68f19f6e55014" creation-date="04/27/2020 18:16:09" order-index="13" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="false" lock-to-fields="false" auto-path="" x1="1013" y1="277" x2="1063" y2="277" start-border-pos="0.375" end-border-pos="0.875" name-position="0,0">
+              <points>
+                <point x="1013" y="277" />
+                <point x="1063" y="277" />
+              </points>
+            </layout>
+            <relation from="b30d894a53984cf6a42026da1b3b5a16" from-iid="00a2f11363fd4f99aa87cec806003b71" to="5340fe66389b470eb40083de27b71b9e" to-iid="4617fc0b0c4b40f0998c552cce602be7" />
+          </item>
+          <item id="6d67eae42009431cb21343c47e3e5a07" iid="b384322152ad4563a8ca23f6d146aec7" anchor="None" creation-date="04/27/2020 18:43:32" order-index="14" type="entity">
+            <layout ax="472" ay="197" awidth="140" aheight="160" x="472" y="197" width="140" height="160" />
+            <class />
+          </item>
+          <item id="a2b1d7e14fff42a4a9f97e1fa9dcf4d7" iid="2b3f356ba4ca4be8a6baaccd21a580f7" anchor="None" creation-date="04/27/2020 18:43:46" order-index="15" type="entity">
+            <layout ax="472" ay="440" awidth="140" aheight="160" x="472" y="440" width="140" height="160" />
+            <class />
           </item>
         </layer>
       </diagram>

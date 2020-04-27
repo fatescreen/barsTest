@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json.Linq;
 using Npgsql;
 
 namespace barsTest.CustomPostgreSQL
@@ -9,6 +10,13 @@ namespace barsTest.CustomPostgreSQL
 		private string connectionString;
 		private NpgsqlConnection connection;
 		private string dataBaseName;
+
+		JObject jObject;
+
+		//JObject jObject = JObject.Parse(json);
+		//JToken jUser = jObject["user"];
+		//name = (string) jUser["name"];
+
 
 		public PostgreSQL(string connectionString)
 		{
@@ -44,7 +52,7 @@ namespace barsTest.CustomPostgreSQL
 			}
 			else if (bytePower == "GB")
 			{
-				result = float.Parse(size); ;
+				result = float.Parse(size);
 			}
 			else
 			{

@@ -13,3 +13,7 @@ barsTest/obj/Debug/netcoreapp3.1/barsTest.pdb
 *.dll
 *.cache
 .vs/barsTest/v16/.suo
+*.dll
+*.pdb
+*.cache
+barsTest/obj/Debug/netcoreapp3.1/barsTest.csproj.FileListAbsolute.txt

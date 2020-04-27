@@ -1,0 +1,20 @@
+{
+  "servers": [
+    {
+      "Name": "Server 1",
+      "Host": "localhost",
+      "Username": "postgres",
+      "Password": "lol123",
+      "Database": "postgres",
+      "serverSizeInGb": "10"
+    },
+    {
+      "Name": "Server 2",
+      "Host": "localhost",
+      "Username": "postgres",
+      "Password": "lol123",
+      "Database": "postgres",
+      "serverSizeInGb": "15"
+    }
+  ]
+}
