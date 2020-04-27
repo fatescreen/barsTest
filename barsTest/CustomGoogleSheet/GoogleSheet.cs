@@ -10,8 +10,8 @@ namespace barsTest.CustomGoogleSheet
     class GoogleSheet
     {
         private string[] Scopes = { SheetsService.Scope.Spreadsheets };
-        private string spreadsheetId = "1ZDRmLulyTT1okyM55q4MxJXP6xfLUDLHupH7SIPwda0";
-        private string sheetName = "list1";
+        private string spreadsheetId;
+        private string sheetName;
         SheetsService service;
 
         public GoogleSheet(string sheetName, string spreadsheetId)

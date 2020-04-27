@@ -6,34 +6,15 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.Data;
 using System.Dynamic;
+using barsTest.CustomGoogleSheet;
+using barsTest.CustomServer;
 
 namespace barsTest
 {
-    class Server
-    {
-        public string Name { get; set; }
-        public string Host { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Database { get; set; }
-        public string serverSizeInGb { get; set; }        
-    }
-
-    class ServerList
-    {
-        public List<Server> servers { get; set; }
-    }
-
+    
     class Program
     {
         
-        JObject jObject;
-
-        //JObject jObject = JObject.Parse(json);
-        //JToken jUser = jObject["user"];
-        //name = (string) jUser["name"];
-
-
         static void Main(string[] args)
         {
             string jsonString;
@@ -43,25 +24,14 @@ namespace barsTest
             }
             ServerList serverList = JsonConvert.DeserializeObject<ServerList>(jsonString);
             Console.WriteLine(serverList.servers[0].Name);
-
-            //foreach (Server server in serverList.list)
-            //{
-            //    Console.WriteLine(server.Name);
-            //}
+            Console.WriteLine(serverList.servers[0].getDataBaseSizeInGb());
+            Console.WriteLine(serverList.servers[0].getServerSizeInGb());
 
 
-            //JObject jObject = JObject.Parse(jsonString);
-            //JToken jUser = jObject["Server"];
-            //string type = (string)jUser["Name"];
-            //Console.WriteLine(type);
-
-
-            string connectionString = "Host=localhost;Username=postgres;Password=lol123;Database=postgres";
-            PostgreSQL postgre = new PostgreSQL(connectionString);
-            Console.WriteLine(postgre.getDataBaseSizeInGb());
-
-            //GoogleSheet sheet1 = new GoogleSheet();
-            //sheet1.testFunction();
+            string spreadsheetId = "1ZDRmLulyTT1okyM55q4MxJXP6xfLUDLHupH7SIPwda0";
+            string sheetName = "list1";
+            GoogleSheet sheet1 = new GoogleSheet(sheetName, spreadsheetId);
+            sheet1.testFunction();
 
             Console.ReadLine();
         }
