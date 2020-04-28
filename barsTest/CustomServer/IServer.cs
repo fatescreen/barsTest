@@ -1,9 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 
 namespace barsTest.CustomServer
 {
+    /// <summary>
+    /// Interface for Server class
+    /// </summary>
     interface IServer
     {
         public float getDataBaseSizeInGb();

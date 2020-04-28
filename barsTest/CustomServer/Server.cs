@@ -1,10 +1,10 @@
 ﻿using barsTest.CustomPostgreSQL;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace barsTest.CustomServer
 {
+    /// <summary>
+    /// Class that stores server and database information
+    /// </summary>
     class Server : IServer
     {
         public string Name { get; set; }
@@ -20,7 +20,10 @@ namespace barsTest.CustomServer
         {            
             
         }
-
+        /// <summary>
+        /// Gets size of database of current server
+        /// </summary>
+        /// <returns>size of database in GB</returns>
         public float getDataBaseSizeInGb()
         {
             this.connectionString = "Host=" + this.Host +
@@ -31,7 +34,10 @@ namespace barsTest.CustomServer
             PostgreSQL database = new PostgreSQL(this.connectionString);
             return database.getDataBaseSizeInGb();
         }
-
+        /// <summary>
+        /// Gets current server size.
+        /// </summary>
+        /// <returns>server size in GB</returns>
         public float getServerSizeInGb()
         {
             return this.serverSizeInGb;

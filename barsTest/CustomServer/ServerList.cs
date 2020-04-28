@@ -1,12 +1,11 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace barsTest.CustomServer
 {
-    class ServerList
+    /// <summary>
+    /// Class for creating list of Servers
+    /// </summary>
+    class ServerList : IServerList
     {
         public List<Server> servers { get; set; }        
 

@@ -1,30 +1,31 @@
-﻿using System;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using Npgsql;
 
 namespace barsTest.CustomPostgreSQL
 {
-
+	/// <summary>
+	/// Class for getting data from postgreSQL database
+	/// </summary>
 	public class PostgreSQL : IPostgreSQL
 	{
 		private string connectionString;
 		private NpgsqlConnection connection;
 		private string dataBaseName;
 
-		JObject jObject;
-
-		//JObject jObject = JObject.Parse(json);
-		//JToken jUser = jObject["user"];
-		//name = (string) jUser["name"];
-
-
+		/// <summary>
+		/// Creates object of postgre database connection and stores some data from this database
+		/// </summary>
+		/// <param name="connectionString"></param>
 		public PostgreSQL(string connectionString)
 		{
 			this.connectionString = connectionString;
 			this.connection = new NpgsqlConnection(this.connectionString);
 			this.dataBaseName = connectionString.Substring(connectionString.IndexOf("Database=")).Replace("Database=", "");
 		}
-
+		/// <summary>
+		/// Gets database size in GB.
+		/// </summary>
+		/// <returns>size in GB</returns>
 		public float getDataBaseSizeInGb()
 		{
 			float result = 0;
@@ -61,7 +62,10 @@ namespace barsTest.CustomPostgreSQL
 
 			return result;
 		}
-
+		/// <summary>
+		/// Gets database size in string format in kB, MB, or GB.
+		/// </summary>
+		/// <returns>database size, for example: "8463 kB"</returns>
 		private string getDataBaseSize()
 		{
 			string getDataBaseSizeCommand = $"SELECT pg_size_pretty( pg_database_size('{this.dataBaseName}') );";

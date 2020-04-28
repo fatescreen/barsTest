@@ -4,14 +4,15 @@ using Google.Apis.Auth.OAuth2;
 using Google.Apis.Sheets.v4;
 using Google.Apis.Sheets.v4.Data;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace barsTest.CustomGoogleSheet
 {
-    class GoogleSheet
+    /// <summary>
+    /// Class for creating google sheets with server/database info
+    /// </summary>
+    class GoogleSheet : IGoogleSheet
     {
         private string[] Scopes = { SheetsService.Scope.Spreadsheets };
         private string spreadsheetId;
@@ -19,7 +20,12 @@ namespace barsTest.CustomGoogleSheet
         SheetsService service;
         Server server;
         GoogleCredential credential;
-
+        /// <summary>
+        /// Create GoogleSheet with server parameters and database data.
+        /// </summary>
+        /// <param name="sheetName">name of the sheet</param>
+        /// <param name="spreadsheetId">ID of google table</param>
+        /// <param name="server">Object with server/database information</param>
         public GoogleSheet(string sheetName, string spreadsheetId, Server server)
         {
             this.sheetName = sheetName;
@@ -36,7 +42,9 @@ namespace barsTest.CustomGoogleSheet
                 HttpClientInitializer = this.credential,
             });
         }
-
+        /// <summary>
+        /// Updates the header of the list. 
+        /// </summary>
         public void updateHeader()
         {
             createSheet(this.sheetName);
@@ -45,7 +53,9 @@ namespace barsTest.CustomGoogleSheet
             updateSingleEntry("C1", "Размер в ГБ");
             updateSingleEntry("D1", "Дата обновления");
         }
-
+        /// <summary>
+        /// Updates the actual data in list.
+        /// </summary>
         public void updateData()
         {
             createSheet(this.sheetName);
@@ -57,7 +67,9 @@ namespace barsTest.CustomGoogleSheet
             updateSingleEntry("C2", server.getDataBaseSizeInGb().ToString());
             updateSingleEntry("D2", dateTime.ToString("dd/MM/yyyy"));
         }
-
+        /// <summary>
+        /// Updates the footer of the list.
+        /// </summary>
         public void updateFooter()
         {
             createSheet(this.sheetName);
@@ -70,8 +82,12 @@ namespace barsTest.CustomGoogleSheet
             updateSingleEntry("C4", freeSpace.ToString());
             updateSingleEntry("D4", dateTime.ToString("dd/MM/yyyy"));
         }
-
-
+        /// <summary>
+        /// Create new list in current google table. 
+        /// 
+        /// If sheet with same name is already exists - do nothing.
+        /// </summary>
+        /// <param name="newSheetName">new list name</param>
         public void createSheet(string newSheetName)
         {
             var addSheetRequest = new AddSheetRequest();
@@ -93,7 +109,11 @@ namespace barsTest.CustomGoogleSheet
             }
             
         }
-
+        /// <summary>
+        /// Update single entry in table, in given address with given value.
+        /// </summary>
+        /// <param name="address">Address to update the value</param>
+        /// <param name="value">New value</param> 
         public void updateSingleEntry(string address, string value)
         {
             var range = $"{sheetName}!{address}";
@@ -105,20 +125,7 @@ namespace barsTest.CustomGoogleSheet
             var appendRequest = service.Spreadsheets.Values.Update(valueRange, spreadsheetId, range);
             appendRequest.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.USERENTERED;
             var appendResponse = appendRequest.Execute();
-        }
-
-        public void CreateEntry()
-        {
-            var range = $"{sheetName}!A:D";
-            var valueRange = new ValueRange();
-            var objectList = new List<object>() { "test1", "test2", "test3", "test4" };
-            valueRange.Values = new List<IList<object>> { objectList};
-
-            var appendRequest = service.Spreadsheets.Values.Append(valueRange, spreadsheetId, range);
-            appendRequest.ValueInputOption = SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum.USERENTERED;
-            var appendResponse = appendRequest.Execute();
-        }
-
+        }        
        
     }
 }
