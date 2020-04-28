@@ -3,6 +3,7 @@ namespace barsTest.CustomGoogleTable
 {
     interface IGoogleTable
     {
-        public void update();
+        public void foreverUpdateStart(long intervalTimeInSec);
+        public void foreverUpdateStop();
     }
 }

@@ -1,4 +1,6 @@
-﻿using Google.Apis.Auth.OAuth2;
+﻿using barsTest.CustomServer;
+using Google;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Sheets.v4;
 using Google.Apis.Sheets.v4.Data;
 using System;
@@ -15,20 +17,60 @@ namespace barsTest.CustomGoogleSheet
         private string spreadsheetId;
         private string sheetName;
         SheetsService service;
+        Server server;
+        GoogleCredential credential;
 
-        public GoogleSheet(string sheetName, string spreadsheetId)
+        public GoogleSheet(string sheetName, string spreadsheetId, Server server)
         {
             this.sheetName = sheetName;
             this.spreadsheetId = spreadsheetId;
+            this.server = server;
+
+            using (var stream = new FileStream("configuration.json", FileMode.Open, FileAccess.Read))
+            {
+                this.credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes);
+            }
+
+            service = new SheetsService(new Google.Apis.Services.BaseClientService.Initializer()
+            {
+                HttpClientInitializer = this.credential,
+            });
         }
 
         public void updateHeader()
         {
+            createSheet(this.sheetName);
             updateSingleEntry("A1", "Сервер");
             updateSingleEntry("B1", "База данных");
             updateSingleEntry("C1", "Размер в ГБ");
             updateSingleEntry("D1", "Дата обновления");
         }
+
+        public void updateData()
+        {
+            createSheet(this.sheetName);
+
+            DateTime dateTime = DateTime.UtcNow.Date;
+
+            updateSingleEntry("A2", server.Name);
+            updateSingleEntry("B2", server.Database);
+            updateSingleEntry("C2", server.getDataBaseSizeInGb().ToString());
+            updateSingleEntry("D2", dateTime.ToString("dd/MM/yyyy"));
+        }
+
+        public void updateFooter()
+        {
+            createSheet(this.sheetName);
+
+            DateTime dateTime = DateTime.UtcNow.Date;
+            float freeSpace = this.server.getServerSizeInGb() - this.server.getDataBaseSizeInGb();
+
+            updateSingleEntry("A4", server.Name);
+            updateSingleEntry("B4", "Свободно");
+            updateSingleEntry("C4", freeSpace.ToString());
+            updateSingleEntry("D4", dateTime.ToString("dd/MM/yyyy"));
+        }
+
 
         public void createSheet(string newSheetName)
         {
@@ -40,7 +82,16 @@ namespace barsTest.CustomGoogleSheet
             batchUpdateSpreadsheetRequest.Requests.Add(new Request { AddSheet = addSheetRequest });
 
             var batchUpdateRequest = service.Spreadsheets.BatchUpdate(batchUpdateSpreadsheetRequest, spreadsheetId);
-            batchUpdateRequest.Execute();
+
+            try
+            {
+                batchUpdateRequest.Execute();
+            }
+            catch (GoogleApiException e)
+            { 
+                
+            }
+            
         }
 
         public void updateSingleEntry(string address, string value)
@@ -68,31 +119,6 @@ namespace barsTest.CustomGoogleSheet
             var appendResponse = appendRequest.Execute();
         }
 
-        public void testFunction()
-        {
-            GoogleCredential credential;
-            using (var stream = new FileStream("configuration.json", FileMode.Open, FileAccess.Read))
-            {
-                credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes);
-            }
-
-            service = new SheetsService(new Google.Apis.Services.BaseClientService.Initializer()
-            {
-                HttpClientInitializer = credential,
-                //ApplicationName = ApplicationName,
-            });
-
-            var range = $"{sheetName}!A1:D2";
-            var request = service.Spreadsheets.Values.Get(spreadsheetId, range);
-
-            var response = request.Execute();
-            var values = response.Values;
-
-            foreach (var row in values)
-            {
-                Console.WriteLine("{0} {1} {2}", row[0], row[1], row[2]);
-            }
-
-        }
+       
     }
 }
