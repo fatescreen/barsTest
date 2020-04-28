@@ -32,6 +32,8 @@ namespace barsTest
             string sheetName = "list1";
             GoogleSheet sheet1 = new GoogleSheet(sheetName, spreadsheetId);
             sheet1.testFunction();
+            sheet1.updateSingleEntry("B3","lolagain");
+            sheet1.updateHeader();
 
             Console.ReadLine();
         }

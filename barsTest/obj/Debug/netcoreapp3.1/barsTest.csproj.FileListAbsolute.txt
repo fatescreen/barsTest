@@ -1,11 +1,5 @@
-C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.csproj.CoreCompileInputs.cache
-C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.AssemblyInfoInputs.cache
-C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.AssemblyInfo.cs
-C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.csprojAssemblyReference.cache
-C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.Properties.Resources.resources
-C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.csproj.GenerateResource.cache
 C:\barsTest\barsTest\bin\Debug\netcoreapp3.1\barsTest.exe
-C:\barsTest\barsTest\bin\Debug\netcoreapp3.1\gclient_keys.json
+C:\barsTest\barsTest\bin\Debug\netcoreapp3.1\configuration.json
 C:\barsTest\barsTest\bin\Debug\netcoreapp3.1\barsTest.deps.json
 C:\barsTest\barsTest\bin\Debug\netcoreapp3.1\barsTest.runtimeconfig.json
 C:\barsTest\barsTest\bin\Debug\netcoreapp3.1\barsTest.runtimeconfig.dev.json
@@ -18,8 +12,12 @@ C:\barsTest\barsTest\bin\Debug\netcoreapp3.1\Google.Apis.Core.dll
 C:\barsTest\barsTest\bin\Debug\netcoreapp3.1\Google.Apis.Sheets.v4.dll
 C:\barsTest\barsTest\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\barsTest\barsTest\bin\Debug\netcoreapp3.1\Npgsql.dll
+C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.Properties.Resources.resources
+C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.csproj.GenerateResource.cache
+C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.csproj.CoreCompileInputs.cache
+C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.AssemblyInfoInputs.cache
+C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.AssemblyInfo.cs
 C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.csproj.CopyComplete
 C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.dll
 C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.pdb
 C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.genruntimeconfig.cache
-C:\barsTest\barsTest\bin\Debug\netcoreapp3.1\configuration.json
