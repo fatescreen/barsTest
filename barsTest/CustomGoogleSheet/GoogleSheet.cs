@@ -30,6 +30,18 @@ namespace barsTest.CustomGoogleSheet
             updateSingleEntry("D1", "Дата обновления");
         }
 
+        public void createSheet(string newSheetName)
+        {
+            var addSheetRequest = new AddSheetRequest();
+            addSheetRequest.Properties = new SheetProperties();
+            addSheetRequest.Properties.Title = newSheetName;
+            BatchUpdateSpreadsheetRequest batchUpdateSpreadsheetRequest = new BatchUpdateSpreadsheetRequest();
+            batchUpdateSpreadsheetRequest.Requests = new List<Request>();
+            batchUpdateSpreadsheetRequest.Requests.Add(new Request { AddSheet = addSheetRequest });
+
+            var batchUpdateRequest = service.Spreadsheets.BatchUpdate(batchUpdateSpreadsheetRequest, spreadsheetId);
+            batchUpdateRequest.Execute();
+        }
 
         public void updateSingleEntry(string address, string value)
         {

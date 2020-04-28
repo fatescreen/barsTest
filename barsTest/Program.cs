@@ -34,7 +34,7 @@ namespace barsTest
             sheet1.testFunction();
             sheet1.updateSingleEntry("B3","lolagain");
             sheet1.updateHeader();
-
+            sheet1.createSheet("new test");
             Console.ReadLine();
         }
     }

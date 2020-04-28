@@ -21,3 +21,4 @@ C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.csproj.CopyComplete
 C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.dll
 C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.pdb
 C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.genruntimeconfig.cache
+C:\barsTest\barsTest\obj\Debug\netcoreapp3.1\barsTest.csprojAssemblyReference.cache
