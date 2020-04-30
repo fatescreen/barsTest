@@ -2,6 +2,7 @@
 using barsTest.CustomGoogleSheet;
 using barsTest.CustomServer;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Timers;
@@ -25,7 +26,7 @@ namespace barsTest.CustomGoogleTable
         {
             googleSheetList = new List<GoogleSheet>();
             
-            string jsonString;
+            string jsonString;            
             using (StreamReader stream = new StreamReader(configuration))
             {
                 jsonString = stream.ReadToEnd();
@@ -58,6 +59,7 @@ namespace barsTest.CustomGoogleTable
         /// <param name="intervalTimeInSec">Interval for update in seconds</param>
         public void foreverUpdateStart(long intervalTimeInSec)
         {
+            update();
             timerConfiguration(intervalTimeInSec);
             this.aTimer.Enabled = true;
         }
@@ -89,6 +91,7 @@ namespace barsTest.CustomGoogleTable
         private void OnTimedEvent(object sender, ElapsedEventArgs e)
         {
             update();
+            Console.WriteLine("Google table updated...");
         }
     }
     /// <summary>

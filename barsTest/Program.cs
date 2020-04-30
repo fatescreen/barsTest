@@ -8,7 +8,9 @@ namespace barsTest
         static void Main(string[] args)
         {            
             GoogleTable googleTable = new GoogleTable("configuration.json");
-            googleTable.foreverUpdateStart(600);
+            Console.WriteLine("Application is running...");
+            googleTable.foreverUpdateStart(15);
+            Console.WriteLine("Google table created...");
             Console.ReadLine();
         }                
     }
