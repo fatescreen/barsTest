@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using Npgsql;
+using System;
 
 namespace barsTest.CustomPostgreSQL
 {
@@ -29,8 +30,18 @@ namespace barsTest.CustomPostgreSQL
 		public float getDataBaseSizeInGb()
 		{
 			float result = 0;
+			string[] sizeInTwoWords = null;
 
-			string[] sizeInTwoWords = getDataBaseSize().Split(' ');
+			try
+			{
+				sizeInTwoWords = getDataBaseSize().Split(' ');
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("Can't get PostgreSQL database size:");
+				Console.WriteLine(e.Message);
+			}
+
 			string size = sizeInTwoWords[0];
 			string bytePower = sizeInTwoWords[1];			
 			
@@ -71,14 +82,40 @@ namespace barsTest.CustomPostgreSQL
 			string getDataBaseSizeCommand = $"SELECT pg_size_pretty( pg_database_size('{this.dataBaseName}') );";
 			string size = "";
 
-			this.connection.Open();
-			using (var command = new NpgsqlCommand(getDataBaseSizeCommand, this.connection))
-			using (var reader = command.ExecuteReader())
-			while (reader.Read())
+			try
 			{
-				size = reader.GetString(0);
+				this.connection.Open();
 			}
-			this.connection.Close();
+			catch (Exception e)
+			{
+				Console.WriteLine("Can't open connection to PostgreSQL database:");
+				Console.WriteLine(e.Message);
+			}
+
+			try
+			{
+				using (var command = new NpgsqlCommand(getDataBaseSizeCommand, this.connection))
+				using (var reader = command.ExecuteReader())
+					while (reader.Read())
+					{
+						size = reader.GetString(0);
+					}
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("Can't get PostgreSQL database size:");
+				Console.WriteLine(e.Message);
+			}
+
+			try
+			{
+				this.connection.Close();
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("Can't close connection to PostgreSQL database:");
+				Console.WriteLine(e.Message);
+			}			
 
 			return size;
 		}

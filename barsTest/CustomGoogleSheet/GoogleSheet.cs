@@ -47,40 +47,66 @@ namespace barsTest.CustomGoogleSheet
         /// </summary>
         public void updateHeader()
         {
-            createSheet(this.sheetName);
-            updateSingleEntry("A1", "Сервер");
-            updateSingleEntry("B1", "База данных");
-            updateSingleEntry("C1", "Размер в ГБ");
-            updateSingleEntry("D1", "Дата обновления");
+            try
+            {
+                createSheet(this.sheetName);
+                updateSingleEntry("A1", "Сервер");
+                updateSingleEntry("B1", "База данных");
+                updateSingleEntry("C1", "Размер в ГБ");
+                updateSingleEntry("D1", "Дата обновления");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Can't update sheet header:");
+                Console.WriteLine(e.Message);
+            }
+            
         }
         /// <summary>
         /// Updates the actual data in list.
         /// </summary>
         public void updateData()
         {
-            createSheet(this.sheetName);
+            try
+            {
+                createSheet(this.sheetName);
 
-            DateTime dateTime = DateTime.UtcNow.Date;
+                DateTime dateTime = DateTime.UtcNow.Date;
 
-            updateSingleEntry("A2", server.Name);
-            updateSingleEntry("B2", server.Database);
-            updateSingleEntry("C2", server.getDataBaseSizeInGb().ToString());
-            updateSingleEntry("D2", dateTime.ToString("dd/MM/yyyy"));
+                updateSingleEntry("A2", server.Name);
+                updateSingleEntry("B2", server.Database);
+                updateSingleEntry("C2", server.getDataBaseSizeInGb().ToString());
+                updateSingleEntry("D2", dateTime.ToString("dd/MM/yyyy"));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Can't update sheet data:");
+                Console.WriteLine(e.Message);
+            }
+            
         }
         /// <summary>
         /// Updates the footer of the list.
         /// </summary>
         public void updateFooter()
         {
-            createSheet(this.sheetName);
+            try
+            {
+                createSheet(this.sheetName);
 
-            DateTime dateTime = DateTime.UtcNow.Date;
-            float freeSpace = this.server.getServerSizeInGb() - this.server.getDataBaseSizeInGb();
+                DateTime dateTime = DateTime.UtcNow.Date;
+                float freeSpace = this.server.getServerSizeInGb() - this.server.getDataBaseSizeInGb();
 
-            updateSingleEntry("A4", server.Name);
-            updateSingleEntry("B4", "Свободно");
-            updateSingleEntry("C4", freeSpace.ToString());
-            updateSingleEntry("D4", dateTime.ToString("dd/MM/yyyy"));
+                updateSingleEntry("A4", server.Name);
+                updateSingleEntry("B4", "Свободно");
+                updateSingleEntry("C4", freeSpace.ToString());
+                updateSingleEntry("D4", dateTime.ToString("dd/MM/yyyy"));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Can't update sheet footer:");
+                Console.WriteLine(e.Message);
+            }            
         }
         /// <summary>
         /// Create new list in current google table. 
@@ -104,8 +130,8 @@ namespace barsTest.CustomGoogleSheet
                 batchUpdateRequest.Execute();
             }
             catch (GoogleApiException e)
-            { 
-                
+            {
+                //TODO Make another code for case if sheet already exists
             }
             
         }
@@ -124,7 +150,16 @@ namespace barsTest.CustomGoogleSheet
 
             var appendRequest = service.Spreadsheets.Values.Update(valueRange, spreadsheetId, range);
             appendRequest.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.USERENTERED;
-            var appendResponse = appendRequest.Execute();
+
+            try
+            {
+                var appendResponse = appendRequest.Execute();
+            }
+            catch (Exception e) 
+            {
+                Console.WriteLine("Can't update single entry:");
+                Console.WriteLine(e.Message);
+            }
         }        
        
     }

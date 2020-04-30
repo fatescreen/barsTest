@@ -24,15 +24,23 @@ namespace barsTest.CustomGoogleTable
         /// <param name="configuration">name of configuration .json file, that lay in project directory</param>
         public GoogleTable(string configuration)
         {
-            googleSheetList = new List<GoogleSheet>();
-            
-            string jsonString;            
-            using (StreamReader stream = new StreamReader(configuration))
+            googleSheetList = new List<GoogleSheet>();            
+            string jsonString;
+
+            try
             {
-                jsonString = stream.ReadToEnd();
+                using (StreamReader stream = new StreamReader(configuration))
+                {
+                    jsonString = stream.ReadToEnd();
+                }
+                this.serverList = JsonConvert.DeserializeObject<ServerList>(jsonString);
+                this.spreadsheetId = JsonConvert.DeserializeObject<SpreadsheetId>(jsonString);
             }
-            this.serverList = JsonConvert.DeserializeObject<ServerList>(jsonString);
-            this.spreadsheetId = JsonConvert.DeserializeObject<SpreadsheetId>(jsonString);            
+            catch (Exception e)
+            {                
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e.Message);
+            }
 
             foreach (Server server in serverList.servers)
             {                
