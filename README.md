@@ -1,3 +1,3 @@
 # barsTest
 
-![uml-diagram](https://i.snipboard.io/sdpE2o.jpg)
+![uml-diagram](https://snipboard.io/cE8dMX.jpg)
